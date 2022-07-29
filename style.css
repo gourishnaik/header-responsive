@@ -1,0 +1,124 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   text-decoration: none;
+   
+}
+body{
+   min-height: 100vh;
+   background: url(./images/background.avif)no-repeat;
+   background-size:cover ;
+   background-position: center;
+}
+header{
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   background: #fff;
+   display:flex;
+   align-items: center;
+   padding: 20px 7%;
+   justify-content: space-between;
+   z-index: 1000;
+}
+header .logo{
+   width: 146px;
+   height: 52px;
+}
+header .navbar ul{
+   list-style: none;
+}
+header .navbar ul li{
+   float: left;
+   position: relative;
+}
+header .navbar ul li a{
+   padding: 20px;
+   font-size: 20px;
+   display: block;
+   color: black;
+}
+header .navbar ul li a:hover{
+   background: black;
+   color: #fff;
+}
+
+/*for dropdown css */
+header .navbar ul li ul{
+   position: absolute;
+   left: 0;
+   width: 200px;
+   background: #fff;
+   display: none;  /*normal condition dont display */
+}
+
+header .navbar ul li:hover > ul{
+   display: initial;   /*on hover it will display */
+}
+
+
+
+header .navbar ul li ul li{
+   width: 100%;
+   border-top: 1px solid rgba(0,0,0,.1);
+}
+header .navbar ul li ul li ul{
+   left: 200px;
+   top: 0;
+}
+
+/*responsive menu*/
+#menu-bar{
+   display: none;
+}
+header label{
+   font-size: 20px;
+   cursor: pointer;
+   color: black;
+   display: none;
+}
+
+
+
+
+/*responsiveness */
+
+@media(max-width:991px){
+    header{
+      padding: 20px;
+    }
+    header label{
+      display: initial;
+    }
+    header .navbar{
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border-top: 1px solid rgba(0,0,0,.1);
+      display: none;
+    }
+    header .navbar ul li{
+      width: 100%;
+    }
+    header .navbar ul li ul{
+      position: relative;
+      width: 100%;
+    }
+    header .navbar ul li ul li{
+      background: #fff;
+     
+    }
+    header .navbar ul li ul li ul{
+      width: 100%;
+      left: 0;
+    }
+  /*on menu bar click all items */
+   #menu-bar:checked ~ .navbar{
+      display: initial;
+   }
+
+}
